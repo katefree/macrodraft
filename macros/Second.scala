@@ -13,4 +13,6 @@ object Second {
     val name1 = newTypeName(show(name))
     q"class $name1 { ..$defs }; () => {new $name1}"
   }
+
+
 }
