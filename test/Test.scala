@@ -2,11 +2,18 @@ import macros._;
 import scala.reflect.runtime.{universe=>ru}
 
 object Test1 extends App {
-  import Point._
+  import Pointx._
 
-  var t = clazz(C){def x =1};
-  pointa(C){x};
-  // var value = point(t, x) 
+  var t = clazz(C){def x = {println("Hello world");7+1}; def v = {888}; def y = {7+1}};
+  
+  // println("!!!!!!!!!!"+t);
+  // println("!!!!!!!!!!");
+  // pointa(C){x};
+  
+  var value = point(C)(x) 
+  value = point(C)(v)
+  println("value = " + value);
+
 
   // = hello({var dd = 7; var ss = 8; def hey = {println("Hello world!" + dd)}; 
   	// def setDD(dd: Int) = {this.dd=dd; this.hey()}; def s6(dd: Int) = {println(8 + dd)} })
